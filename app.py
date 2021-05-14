@@ -12,11 +12,11 @@ class Post(db.Model):
     detail = db.Column(db.String(100))
     due = db.Column(db.DateTime, nullable=False)
 
-@app.route('/', methods = ['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    if request.method =='GET':
+    if request.method == 'GET':
         posts = Post.query.order_by(Post.due).all()
-        return render_template('index.html', posts = posts, today=date.today())
+        return render_template('index.html', posts=posts, today=date.today())
 
     else:
         title = request.form.get('title')
@@ -38,9 +38,9 @@ def create():
 def read(id):
     post = Post.query.get(id)
 
-    return render_template('create.html')
+    return render_template('detail.html', post=post)
 
-@app.route('/detail/<int:id>')
+@app.route('/delete/<int:id>')
 def delete(id):
     post = Post.query.get(id)
 
@@ -52,7 +52,7 @@ def delete(id):
 def update(id):
     post = Post.query.get(id)
     if request.method == 'GET':
-        return render_tenplate('update.html', post = post)
+        return render_template('update.html', post = post)
     else:
         post.title = request.form.get('title')
         post.detail = request.form.get('detail')

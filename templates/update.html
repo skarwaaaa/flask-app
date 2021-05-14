@@ -2,10 +2,10 @@
 
 {% block body %}
 <h2 class="m-5">編集</h2>
-<form class="m-5" action ="/update/{{ post.id }}" method = "POST">
-    <div class = "form-group pb-3">
+<form class="m-5" action="/update/{{ post.id }}" method="POST">
+    <div class="form-group pb-3">
         <label for="title">Title : </label>
-        <input type="text" class="form-control" name="title" aria-describedy="title-help" value={{ post.title }}>
+        <input type="text" class="form-control" name="title" aria-describedby="title-help" value={{ post.title }}>
     </div>
     <div class="form-group pb-3">
         <label for="detail">Detail : </label>
@@ -16,6 +16,6 @@
         <input type="date" name="due" value={{ post.due.date() }} required>
     </div>
     <a class="btn btn-outline-primary" href="/" role="button">Return</a>
-    <button type="submit" class="btn btn-primary">Chenge</button>
+    <button type="submit" class="btn btn-primary">Change</button>
 </form>
 {% endblock %}
