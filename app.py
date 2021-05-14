@@ -47,6 +47,23 @@ def delete(id):
     db.session.delete(post)
     db.session.commit()
     return redirect('/')
+<<<<<<< HEAD
     
+=======
+
+@app.route('/update/<int:id>', methods=['GET', 'POST'])
+def update(id):
+    post = Post.query.get(id)
+    if reqest.method =- 'GET':
+        return render_tenplate('update.html', post = post)
+    else:
+        post.title = request.form.get('title')
+        post.detail = request.form.get('detail')
+        post.due = datetime.strptime(request.form.get('due'), '%Y-%m-%d')
+
+        db.session.commit()
+        return redirect('/')
+
+>>>>>>> parent of 27e9539 (Revert "両環境統合")
 if __name__ == "__main__":
     app.run(debug=True) 
