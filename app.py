@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -15,7 +15,7 @@ class Post(db.Model):
 @app.route('/', methods = ['GET', 'POST'])
 def index():
     if request.method =='GET':
-        posts = Post.queryorder_by(Post.due).all()
+        posts = Post.query.order_by(Post.due).all()
         return render_template('index.html', posts = posts)
 
     else:
