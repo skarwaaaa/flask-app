@@ -1,8 +1,22 @@
 {% extends 'base.html' %}
 
 {% block body %}
+<style>
+    body {
+        background-image: url("https://fujifilm-x.com/wp-content/uploads/2019/08/xf18-55mmf28-4-r-lm-ois_sample-images07.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        
+    }
+</style>
 <h2 class="m-5" style="text-align: center;">詳細</h2>
 <div class="card w-50 mb-3" style="margin: auto;">
+    <style>
+        body {
+            opacity: 0.9;
+        }
+    </style>
     <div class="card-body">
         <h2 class="card-title">{{ post.title }} <span class="ml-3"
             style="font-size: 0.5em;">期限：{{ post.due.date() }}</span></h2>
