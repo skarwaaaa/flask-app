@@ -10,7 +10,8 @@
         
     }
     </style>
-<h2 class="m-5">編集</h2>
+<h2 class="m-5 text-light">編集</h2>
+
 <form class="m-5" action="/update/{{ post.id }}" method="POST">
     <div class="form-group pb-3">
         <style>
@@ -18,18 +19,18 @@
                 opacity: 0.9;
             }
         </style>
-        <label for="title">Title : </label>
+        <label for="title text-light">Titleの編集 : </label>
         <input type="text" class="form-control" name="title" aria-describedby="title-help" value={{ post.title }}>
     </div>
     <div class="form-group pb-3">
-        <label for="detail">Detail : </label>
+        <label for="detail text-light">内容の編集 : </label>
         <input type="text" class="form-control" name="detail" value={{ post.detail }}>
     </div>
     <div class="form-group pb-3">
         <label for="due">Due : </label>
         <input type="date" name="due" value={{ post.due.date() }} required>
     </div>
-    <a class="btn btn-success " href="/" role="button">Return</a>
-    <button type="submit" class="btn btn-primary">Change</button>
+    <a class="btn btn-success " href="/" role="button">戻る</a>
+    <button type="submit" class="btn btn-primary">変更</button>
 </form>
 {% endblock %}
