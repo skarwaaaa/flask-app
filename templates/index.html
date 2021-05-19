@@ -1,16 +1,29 @@
 {% extends 'base.html' %}
 {% block body %}
+<div class="box">
     <style>
         body {
             background-image: url("https://fujifilm-x.com/wp-content/uploads/2019/08/xf55-200mmf35-48-r-lm-ois_sample-images03.jpg");
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;  
+            background-repeat: no-repeat;     
         }
     </style>
+</div>
+<!-- <div class="box2">
+    <style>
+        body {
+            background-image: url("http://fyama.2.pro.tok2.com/Kenya/Animal_Landoscape/Sample/image/029_061130_VV1H5121.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;     
+        }
+    </style> -->
+<!-- </div> -->
 
 <div class="container">
     <a class="btn btn-info btn-lg m-5" href="/create" role="button">CREATE NEW TASK</a>
+
     {% for post in posts %}
     <div class="card w-50 mb-3" style="margin: auto;">
         <style> body {opacity: 0.9;}</style>
@@ -18,7 +31,7 @@
             <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
             {% if post.due.date() < today %}
             <div  class="alert alert-info text-center mb-0 rounded-0 alert-dismissible fade show">
-                期限が切れてます！！！！！！！！！！！！
+                期限が切れてます！！！！！！！！！！！！     
                 <button  class="close" data-dismiss="alert">
                   &times;
                 </button>
@@ -33,11 +46,24 @@
 
             {% endif %}
             
-            <h2 class="card-title">{{ post.title }}</h2>            
-            <p>期限：{{ post.due.date() }}</p>
-            <a class="btn btn-secondary btn-sm" href="/detail/{{ post.id }}" role="button">Detail</a>
-            <a class="btn btn-success btn-sm" href="/update/{{ post.id }}" role="button">Update</a>
-            <a class="btn btn-danger btn-sm" href="/delete/{{ post.id }}" role="button">Delete</a>
+            <div>
+                <h2 class="card-title">{{ post.title }}</h2>            
+                <p>期限：{{ post.due.date() }}</p>
+                <a class="btn btn-secondary btn-sm" href="/detail/{{ post.id }}" role="button">Detail</a>
+                <a class="btn btn-success btn-sm" href="/update/{{ post.id }}" role="button">Update</a>
+                <a id="box" class="btn btn-danger btn-sm" href="/delete/{{ post.id }}" role="button">Delete</a>
+            </div>
+            <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+            <script>
+                $(function () {
+                   $('a#box').click(function() {
+                       $(body).css('background-image: url("http://fyama.2.pro.tok2.com/Kenya/Animal_Landoscape/Sample/image/029_061130_VV1H5121.jpg")');
+                       window.location.href = '/';
+
+                    //    alert("hi!");
+                   });
+                });
+            </script>
         </div>
     </div>
     {% endfor %}

@@ -60,6 +60,10 @@ def update(id):
 
         db.session.commit()
         return redirect('/')
+        
+@app.route('/address')
+def address():
+    return render_template('address.html')
 
 if __name__ == "__main__":
     app.run()
