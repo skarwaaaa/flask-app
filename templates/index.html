@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block body %}
-<div class="box">
+<div id="top" class="box">
     <style>
         body {
             background-image: url("https://fujifilm-x.com/wp-content/uploads/2019/08/xf55-200mmf35-48-r-lm-ois_sample-images03.jpg");
@@ -10,16 +10,6 @@
         }
     </style>
 </div>
-<!-- <div class="box2">
-    <style>
-        body {
-            background-image: url("http://fyama.2.pro.tok2.com/Kenya/Animal_Landoscape/Sample/image/029_061130_VV1H5121.jpg");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;     
-        }
-    </style> -->
-<!-- </div> -->
 
 <div class="container">
     <a class="btn btn-info btn-lg m-5" href="/create" role="button">CREATE NEW TASK</a>
@@ -39,14 +29,15 @@
             {% endif %}
 
             
-            <div>
-                <h2 class="card-title">{{ post.title }}</h2>            
-                <p>期限：{{ post.due.date() }}</p>
-                <a class="btn btn-secondary btn-sm" href="/detail/{{ post.id }}" role="button">Detail</a>
-                <a class="btn btn-success btn-sm" href="/update/{{ post.id }}" role="button">Update</a>
-                <a id="box" class="btn btn-danger btn-sm" href="/delete/{{ post.id }}" role="button">Delete</a>
-            </div>
+                <div>
+                    <h2 class="card-title">{{ post.title }}</h2>            
+                    <p>期限：{{ post.due.date() }}</p>
+                    <a class="btn btn-secondary btn-sm" href="/detail/{{ post.id }}" role="button">Detail</a>
+                    <a class="btn btn-success btn-sm" href="/update/{{ post.id }}" role="button">Update</a>
+                    <a id="box" class="btn btn-danger btn-sm" href="/delete/{{ post.id }}" role="button" >Delete</a>
+                </div>
         </div>
+
     </div>
     {% endfor %}
     <script>
@@ -60,9 +51,10 @@
     <script>
         $(function () {
             $('a#box').click(function() {
-                alert("hi!");
-            //    $(body).css('background-image: url("http://fyama.2.pro.tok2.com/Kenya/Animal_Landoscape/Sample/image/029_061130_VV1H5121.jpg")');
-            //    window.location.href = '/';
+                // alert("hi!");
+                ('div#top.box').css("background","url('http://fyama.2.pro.tok2.com/Kenya/Animal_Landoscape/Sample/image/029_061130_VV1H5121.jpg')");
+            //    document.body.style.backgroundImage = 'url("http://fyama.2.pro.tok2.com/Kenya/Animal_Landoscape/Sample/image/029_061130_VV1H5121.jpg")';
+               window.location.href = '/';
             });
         });
     </script>
