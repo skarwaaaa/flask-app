@@ -36,15 +36,8 @@
                   &times;
                 </button>
             </div>
-            <script>
-                $(function() {
-                    $('button').click(function() {
-                        alert("もっとやる気を出しましょう！");
-                    });
-                });
-            </script>
-
             {% endif %}
+
             
             <div>
                 <h2 class="card-title">{{ post.title }}</h2>            
@@ -53,20 +46,26 @@
                 <a class="btn btn-success btn-sm" href="/update/{{ post.id }}" role="button">Update</a>
                 <a id="box" class="btn btn-danger btn-sm" href="/delete/{{ post.id }}" role="button">Delete</a>
             </div>
-            <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-            <script>
-                $(function () {
-                   $('a#box').click(function() {
-                       $(body).css('background-image: url("http://fyama.2.pro.tok2.com/Kenya/Animal_Landoscape/Sample/image/029_061130_VV1H5121.jpg")');
-                       window.location.href = '/';
-
-                    //    alert("hi!");
-                   });
-                });
-            </script>
         </div>
     </div>
     {% endfor %}
+    <script>
+        $(function() {
+            $('button').click(function() {
+                alert("もっとやる気を出しましょう！");
+            });
+        });
+    </script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+        $(function () {
+            $('a#box').click(function() {
+                alert("hi!");
+            //    $(body).css('background-image: url("http://fyama.2.pro.tok2.com/Kenya/Animal_Landoscape/Sample/image/029_061130_VV1H5121.jpg")');
+            //    window.location.href = '/';
+            });
+        });
+    </script>
 </div>
 
 {% endblock %}
