@@ -18,7 +18,7 @@
     <div class="card w-50 mb-3" style="margin: auto;">
         <style> body {opacity: 0.9;}</style>
         <div class="card-body">
-            <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+            <!-- <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script> -->
             {% if post.due.date() < today %}
             <div  class="alert alert-info text-center mb-0 rounded-0 alert-dismissible fade show">
                 期限が切れてます！！！！！！！！！！！！     
@@ -47,17 +47,7 @@
             });
         });
     </script>
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script>
-        $(function () {
-            $('a#box').click(function() {
-                // alert("hi!");
-                ('div#top.box').css("background","url('http://fyama.2.pro.tok2.com/Kenya/Animal_Landoscape/Sample/image/029_061130_VV1H5121.jpg')");
-            //    document.body.style.backgroundImage = 'url("http://fyama.2.pro.tok2.com/Kenya/Animal_Landoscape/Sample/image/029_061130_VV1H5121.jpg")';
-               window.location.href = '/';
-            });
-        });
-    </script>
+
 </div>
 
 {% endblock %}

@@ -15,24 +15,20 @@
 
 <body>
     <nav class="navbar navber-light bg-light p-3">
-      <h1><a href="/" style="color:#000000;" >Todo</a></h1>
+      <h1><a id="home" href="/" style="color:#000000;">Todoアプリ</a></h1>
     </nav>
         <script>
-          $(function () {
-            $('a')
-            .mouseover(function() {
-                $(this).css(style="color:#FFFFFF;");
-              });
-          });
+          var test = document.getElementById("home");
+          test.addEventListener("mouseover", function(event) {
+            event.target.text = "TOPへ戻る"
+
+          test.addEventListener("mouseout", function(event) {
+            event.target.text = "Todoアプリ"
+            });
+          },false);
+
         </script>
 {% block body %}{% endblock %}
-    <!-- <script>
-        $(function() {
-          'use strict';
-          $('[data-toggle="tooltip"]').tooltip();
-        });
-      </script> -->
-
 
 </body>
 
